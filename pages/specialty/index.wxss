@@ -1,0 +1,204 @@
+/* 柬埔寨特产页面 */
+
+/* 分类标签 */
+.category-scroll {
+  white-space: nowrap;
+  padding: 24rpx;
+}
+
+.category-list {
+  display: inline-flex;
+  gap: 16rpx;
+  padding-bottom: 8rpx;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 12rpx 28rpx;
+  border-radius: 40rpx;
+  font-size: 26rpx;
+  background: #FFFFFF;
+  color: #8B7355;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+
+.category-tag.active {
+  background: #C8963E;
+  color: #FFFFFF;
+}
+
+/* 结果计数 */
+.result-count {
+  padding: 8rpx 36rpx 16rpx;
+}
+
+/* 特产网格 */
+.specialty-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 24rpx;
+}
+
+.specialty-card {
+  width: calc(50% - 36rpx);
+  margin: 0 12rpx 24rpx 12rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32rpx 20rpx;
+}
+
+.specialty-icon {
+  font-size: 72rpx;
+  margin-bottom: 14rpx;
+}
+
+.specialty-name {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #2C2416;
+  margin-bottom: 8rpx;
+}
+
+.specialty-price {
+  font-size: 24rpx;
+  color: #C8963E;
+  font-weight: 500;
+  margin-bottom: 8rpx;
+}
+
+.specialty-rating {
+  display: flex;
+  margin-bottom: 12rpx;
+}
+
+.star-small {
+  font-size: 22rpx;
+  color: #E0D0B0;
+  margin-right: 2rpx;
+}
+
+.star-small.active {
+  color: #F5A623;
+}
+
+.specialty-summary {
+  font-size: 24rpx;
+  color: #8B7355;
+  line-height: 1.5;
+}
+
+/* 详情弹窗 */
+.detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.detail-panel {
+  background: #FFFFFF;
+  border-radius: 32rpx 32rpx 0 0;
+  max-height: 85vh;
+  width: 100%;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.detail-hero {
+  height: 260rpx;
+  background: linear-gradient(135deg, #D4706C, #C8963E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 32rpx 32rpx 0 0;
+  position: relative;
+}
+
+.detail-icon {
+  font-size: 120rpx;
+}
+
+.detail-close {
+  position: absolute;
+  top: 24rpx;
+  right: 24rpx;
+  width: 56rpx;
+  height: 56rpx;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #FFFFFF;
+}
+
+.detail-body {
+  padding: 32rpx;
+}
+
+.detail-name {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #2C2416;
+  margin-bottom: 8rpx;
+}
+
+.detail-price {
+  font-size: 28rpx;
+  color: #C8963E;
+  font-weight: 600;
+  margin-bottom: 8rpx;
+}
+
+.detail-rating {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  font-size: 28rpx;
+  color: #E0D0B0;
+  margin-right: 4rpx;
+}
+
+.star.active {
+  color: #F5A623;
+}
+
+.rating-text {
+  font-size: 24rpx;
+  color: #8B7355;
+  margin-left: 8rpx;
+}
+
+.detail-text {
+  font-size: 28rpx;
+  color: #2C2416;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
