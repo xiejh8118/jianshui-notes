@@ -1,4 +1,4 @@
-const { chatKnowledge } = require('../../utils/data')
+import { chatKnowledge } from '../../utils/data'
 
 Page({
   data: {

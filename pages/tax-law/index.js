@@ -1,4 +1,4 @@
-const { taxLawCategories, taxLaws } = require('../../utils/data')
+import { taxLawCategories, taxLaws } from '../../utils/data'
 
 Page({
   data: {

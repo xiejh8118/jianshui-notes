@@ -1070,19 +1070,14 @@ const quickEntries = [
   }
 ]
 
-module.exports = {
-  // 税法
+export {
   taxLawCategories,
   taxLaws,
-  // 旅游
   travelCategories,
   travelSpots,
-  // 特产
   specialtyCategories,
   specialties,
-  // AI客服
   chatKnowledge,
-  // 首页
   banners,
   quickEntries
 }

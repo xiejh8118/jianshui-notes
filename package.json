@@ -4,9 +4,7 @@
   "description": "柬税笔记 - 柬埔寨税法、旅游、特产与AI客服",
   "main": "app.js",
   "scripts": {},
-  "dependencies": {
-    "tdesign-miniprogram": "^1.5.0"
-  },
+  "dependencies": {},
   "author": "",
   "license": "ISC"
 }

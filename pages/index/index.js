@@ -1,4 +1,4 @@
-const { banners, quickEntries, travelSpots, specialties } = require('../../utils/data')
+import { banners, quickEntries, travelSpots, specialties } from '../../utils/data'
 
 Page({
   data: {

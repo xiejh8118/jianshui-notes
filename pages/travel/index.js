@@ -1,4 +1,4 @@
-const { travelCategories, travelSpots } = require('../../utils/data')
+import { travelCategories, travelSpots } from '../../utils/data'
 
 Page({
   data: {

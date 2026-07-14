@@ -1,4 +1,4 @@
-const { specialtyCategories, specialties } = require('../../utils/data')
+import { specialtyCategories, specialties } from '../../utils/data'
 
 Page({
   data: {
