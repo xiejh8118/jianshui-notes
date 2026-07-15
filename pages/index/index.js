@@ -1,4 +1,5 @@
 import { banners, quickEntries, travelSpots, specialties } from '../../utils/data'
+import { getTravelSpots, getSpecialties } from '../../utils/db'
 
 Page({
   data: {
@@ -10,7 +11,16 @@ Page({
   },
 
   onLoad() {
-    // 页面加载
+    this.loadData()
+  },
+
+  // 从云端拉取首页精选内容（失败则保持静态数据）
+  async loadData() {
+    const [spots, items] = await Promise.all([getTravelSpots(), getSpecialties()])
+    this.setData({
+      featuredSpots: (spots || []).slice(0, 3),
+      featuredSpecialties: (items || []).slice(0, 4)
+    })
   },
 
   onShow() {

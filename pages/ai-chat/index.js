@@ -1,7 +1,8 @@
-import { chatKnowledge } from '../../utils/data'
+import { getChatKnowledge } from '../../utils/db'
 
 Page({
   data: {
+    knowledge: [],
     messages: [],
     inputValue: '',
     isTyping: false,
@@ -17,7 +18,11 @@ Page({
     showQuickQuestions: true
   },
 
-  onLoad() {
+  async onLoad() {
+    // 从云端拉取问答知识库（失败则使用本地静态知识库）
+    const knowledge = await getChatKnowledge()
+    this.setData({ knowledge })
+
     // 欢迎消息
     this.addMessage({
       role: 'assistant',
@@ -76,11 +81,12 @@ Page({
   // 问答匹配逻辑
   getAnswer(input) {
     const query = input.toLowerCase()
+    const knowledge = this.data.knowledge || []
     let bestMatch = null
     let bestScore = 0
 
     // 遍历知识库，计算匹配分数
-    for (const item of chatKnowledge) {
+    for (const item of knowledge) {
       let score = 0
       for (const keyword of item.keywords) {
         if (query.includes(keyword.toLowerCase())) {

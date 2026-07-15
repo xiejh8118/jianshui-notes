@@ -1,4 +1,5 @@
 import { specialtyCategories, specialties } from '../../utils/data'
+import { getSpecialties } from '../../utils/db'
 
 Page({
   data: {
@@ -10,9 +11,12 @@ Page({
     showDetail: false
   },
 
-  onLoad(options) {
-    if (options.id) {
-      const item = specialties.find(s => s.id === parseInt(options.id))
+  async onLoad(options) {
+    const items = await getSpecialties()
+    this.setData({ allSpecialties: items, filteredSpecialties: items })
+
+    if (options && options.id) {
+      const item = items.find(s => s.id === parseInt(options.id))
       if (item) {
         this.setData({ detailItem: item, showDetail: true })
       }

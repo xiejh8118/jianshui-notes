@@ -1,4 +1,5 @@
 import { travelCategories, travelSpots } from '../../utils/data'
+import { getTravelSpots } from '../../utils/db'
 
 Page({
   data: {
@@ -10,10 +11,13 @@ Page({
     showDetail: false
   },
 
-  onLoad(options) {
+  async onLoad(options) {
+    const spots = await getTravelSpots()
+    this.setData({ allSpots: spots, filteredSpots: spots })
+
     // 如果有传入id，直接展示对应景点详情
-    if (options.id) {
-      const spot = travelSpots.find(s => s.id === parseInt(options.id))
+    if (options && options.id) {
+      const spot = spots.find(s => s.id === parseInt(options.id))
       if (spot) {
         this.setData({ detailSpot: spot, showDetail: true })
       }

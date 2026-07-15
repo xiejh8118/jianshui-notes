@@ -1,4 +1,5 @@
 import { taxLawCategories, taxLaws } from '../../utils/data'
+import { getTaxLaws } from '../../utils/db'
 
 Page({
   data: {
@@ -11,7 +12,13 @@ Page({
   },
 
   onLoad() {
-    // 页面加载
+    this.loadData()
+  },
+
+  // 从云端拉取税法数据（失败则保持静态数据）
+  async loadData() {
+    const laws = await getTaxLaws()
+    this.setData({ allLaws: laws, filteredLaws: laws })
   },
 
   // 分类切换
