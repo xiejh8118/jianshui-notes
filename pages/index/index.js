@@ -75,7 +75,7 @@ Page({
   // 分享到朋友圈
   onShareTimeline() {
     return {
-      title: '柬税笔记 🇰🇭 柬埔寨税法·旅游·特产·AI客服',
+      title: '柬税笔记 🇰🇭 柬埔寨税法·旅游·特产·问答',
       query: ''
     }
   }

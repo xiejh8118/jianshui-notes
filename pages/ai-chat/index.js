@@ -21,7 +21,7 @@ Page({
     // 欢迎消息
     this.addMessage({
       role: 'assistant',
-      content: 'សួស្តី！您好！👋\n\n欢迎来到柬税笔记AI客服，我是您的柬埔寨智能助手。\n\n我可以帮您解答：\n• 📋 **柬埔寨税法**（企业所得税、增值税、个税等）\n• ✈️ **柬埔寨旅游**（吴哥窟、金边、海岛攻略）\n• 🎁 **柬埔寨特产**（胡椒、丝绸、宝石推荐）\n• 💡 **其他实用信息**（签证、货币、交通等）\n\n请直接输入您的问题，或者点击下方的快捷问题～'
+      content: 'សួស្តី！您好！👋\n\n欢迎使用柬税笔记「柬埔寨问答」，这里整理了大家最常问的柬埔寨问题。\n\n您可以快速查询：\n• 📋 **柬埔寨税法**（企业所得税、增值税、个税等）\n• ✈️ **柬埔寨旅游**（吴哥窟、金边、海岛攻略）\n• 🎁 **柬埔寨特产**（胡椒、丝绸、宝石推荐）\n• 💡 **其他实用信息**（签证、货币、交通等）\n\n请直接输入您的问题，或者点击下方的常见问题～'
     })
   },
 
@@ -57,10 +57,10 @@ Page({
     // 显示打字动画
     this.setData({ isTyping: true })
 
-    // 模拟AI回复延迟
+    // 模拟回复延迟
     const delay = 800 + Math.random() * 1200
     setTimeout(() => {
-      const reply = this.getAIResponse(value)
+      const reply = this.getAnswer(value)
       this.setData({ isTyping: false })
       this.addMessage({ role: 'assistant', content: reply })
     }, delay)
@@ -73,8 +73,8 @@ Page({
     this.onSend()
   },
 
-  // AI回复匹配逻辑
-  getAIResponse(input) {
+  // 问答匹配逻辑
+  getAnswer(input) {
     const query = input.toLowerCase()
     let bestMatch = null
     let bestScore = 0
@@ -121,14 +121,14 @@ Page({
 
   onShareAppMessage() {
     return {
-      title: '柬埔寨AI智能客服 - 税法·旅游·特产随问随答',
+      title: '柬埔寨问答 - 税法·旅游·特产常见问题',
       path: '/pages/ai-chat/index'
     }
   },
 
   onShareTimeline() {
     return {
-      title: '🤖 柬埔寨百事通 | AI客服秒回你关心的所有问题',
+      title: '🇰🇭 柬埔寨百事通 | 常见问题一键查询',
       query: ''
     }
   }
