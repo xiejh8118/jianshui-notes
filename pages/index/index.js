@@ -62,5 +62,21 @@ Page({
   // 查看更多特产
   onMoreSpecialty() {
     wx.switchTab({ url: '/pages/specialty/index' })
+  },
+
+  // 分享给好友
+  onShareAppMessage() {
+    return {
+      title: '柬税笔记 - 柬埔寨税法、旅游、特产全能助手',
+      path: '/pages/index/index'
+    }
+  },
+
+  // 分享到朋友圈
+  onShareTimeline() {
+    return {
+      title: '柬税笔记 🇰🇭 柬埔寨税法·旅游·特产·AI客服',
+      query: ''
+    }
   }
 })

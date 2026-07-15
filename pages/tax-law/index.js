@@ -74,5 +74,19 @@ Page({
         wx.showToast({ title: '已复制', icon: 'success' })
       }
     })
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '柬埔寨税法一本通 - 企业/个税/VAT/关税全收录',
+      path: '/pages/tax-law/index'
+    }
+  },
+
+  onShareTimeline() {
+    return {
+      title: '🇰🇭 柬埔寨税法全攻略 | 投资经商必备',
+      query: ''
+    }
   }
 })

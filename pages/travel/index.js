@@ -46,5 +46,19 @@ Page({
   // 关闭详情
   onCloseDetail() {
     this.setData({ showDetail: false, detailSpot: null })
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '探索吴哥之美 - 柬埔寨最全旅游攻略',
+      path: '/pages/travel/index'
+    }
+  },
+
+  onShareTimeline() {
+    return {
+      title: '🏛️ 吴哥窟·巴戎寺·海岛 | 柬埔寨旅游攻略',
+      query: ''
+    }
   }
 })

@@ -117,5 +117,19 @@ Page({
   // 滚动到底部
   onScrollToLower() {
     // 预留
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '柬埔寨AI智能客服 - 税法·旅游·特产随问随答',
+      path: '/pages/ai-chat/index'
+    }
+  },
+
+  onShareTimeline() {
+    return {
+      title: '🤖 柬埔寨百事通 | AI客服秒回你关心的所有问题',
+      query: ''
+    }
   }
 })

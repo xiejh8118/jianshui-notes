@@ -45,5 +45,19 @@ Page({
   // 关闭详情
   onCloseDetail() {
     this.setData({ showDetail: false, detailItem: null })
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '柬埔寨特产选购指南 - 胡椒·丝绸·宝石·香米',
+      path: '/pages/specialty/index'
+    }
+  },
+
+  onShareTimeline() {
+    return {
+      title: '🎁 柬埔寨必买特产清单 | 伴手礼不踩坑',
+      query: ''
+    }
   }
 })
