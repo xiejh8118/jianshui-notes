@@ -27,9 +27,9 @@ const COLLECTIONS = {
   qa: 'qa'
 }
 
-// 判断云能力是否可用（app.js 中已 wx.cloud.init 后才会真正可用）
+// 判断云能力是否可用：只有 app.js 中 wx.cloud.init 成功后才为 true
 function cloudReady() {
-  return typeof wx !== 'undefined' && !!wx.cloud && typeof wx.cloud.database === 'function'
+  return globalThis.__cloudInited === true
 }
 
 /**

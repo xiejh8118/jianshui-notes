@@ -4,7 +4,7 @@ App({
     appName: '柬税笔记',
     version: '1.0.0',
     // 云开发环境 ID：在微信开发者工具开通「云开发」后获取，替换下方占位符。
-    // 未配置（仍为占位符）时不会初始化云能力，小程序自动使用本地静态数据。
+    // 留空或保持占位符时，会自动尝试使用默认（唯一）云环境；若仍失败则使用本地静态数据。
     cloudEnv: 'your-cloud-env-id'
   },
 
@@ -14,11 +14,18 @@ App({
       return
     }
     const env = this.globalData.cloudEnv
-    if (env && env !== 'your-cloud-env-id') {
-      wx.cloud.init({
-        env,
-        traceUser: true
-      })
+    try {
+      if (env && env !== 'your-cloud-env-id') {
+        // 已配置环境 ID：显式指定
+        wx.cloud.init({ env, traceUser: true })
+      } else {
+        // 未配置：若存在唯一云环境则使用默认环境（降低配置门槛）
+        wx.cloud.init({ traceUser: true })
+      }
+      globalThis.__cloudInited = true
+    } catch (e) {
+      console.error('云开发初始化失败，将使用本地静态数据：', e)
+      globalThis.__cloudInited = false
     }
   }
 })
