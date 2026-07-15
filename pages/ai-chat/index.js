@@ -122,7 +122,8 @@ Page({
   onShareAppMessage() {
     return {
       title: '柬埔寨问答 - 税法·旅游·特产常见问题',
-      path: '/pages/ai-chat/index'
+      path: '/pages/ai-chat/index',
+      imageUrl: '/assets/images/silk.jpg'
     }
   },
 

@@ -79,7 +79,8 @@ Page({
   onShareAppMessage() {
     return {
       title: '柬埔寨税法一本通 - 企业/个税/VAT/关税全收录',
-      path: '/pages/tax-law/index'
+      path: '/pages/tax-law/index',
+      imageUrl: '/assets/images/temple.jpg'
     }
   },
 

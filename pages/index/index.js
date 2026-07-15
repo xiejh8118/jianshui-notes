@@ -68,7 +68,8 @@ Page({
   onShareAppMessage() {
     return {
       title: '柬税笔记 - 柬埔寨税法、旅游、特产全能助手',
-      path: '/pages/index/index'
+      path: '/pages/index/index',
+      imageUrl: '/assets/images/angkor.jpg'
     }
   },
 

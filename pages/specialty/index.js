@@ -50,7 +50,8 @@ Page({
   onShareAppMessage() {
     return {
       title: '柬埔寨特产选购指南 - 胡椒·丝绸·宝石·香米',
-      path: '/pages/specialty/index'
+      path: '/pages/specialty/index',
+      imageUrl: '/assets/images/pepper.jpg'
     }
   },
 

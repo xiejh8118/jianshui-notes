@@ -28,13 +28,17 @@
       data-id="{{item.id}}"
       bindtap="onViewDetail"
     >
-      <view class="specialty-icon">{{item.image}}</view>
-      <view class="specialty-name">{{item.name}}</view>
-      <view class="specialty-price">{{item.price}}</view>
-      <view class="specialty-rating">
-        <text wx:for="{{[1,2,3,4,5]}}" wx:key="*this" class="star-small {{index < item.rating ? 'active' : ''}}">★</text>
+      <view class="specialty-cover">
+        <image wx:if="{{item.img}}" class="specialty-cover-img" src="/assets/images/{{item.img}}" mode="aspectFill" />
+        <view wx:else class="specialty-cover-emoji">{{item.image}}</view>
       </view>
-      <view class="specialty-summary">{{item.summary}}</view>
+      <view class="specialty-info">
+        <view class="specialty-name">{{item.name}}</view>
+        <view class="specialty-price">{{item.price}}</view>
+        <view class="specialty-rating">
+          <text wx:for="{{[1,2,3,4,5]}}" wx:key="*this" class="star-small {{index < item.rating ? 'active' : ''}}">★</text>
+        </view>
+      </view>
     </view>
 
     <!-- 空状态 -->

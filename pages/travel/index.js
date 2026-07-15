@@ -51,7 +51,8 @@ Page({
   onShareAppMessage() {
     return {
       title: '探索吴哥之美 - 柬埔寨最全旅游攻略',
-      path: '/pages/travel/index'
+      path: '/pages/travel/index',
+      imageUrl: '/assets/images/beach.jpg'
     }
   },
 

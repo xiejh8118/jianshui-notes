@@ -1070,6 +1070,22 @@ const quickEntries = [
   }
 ]
 
+// 特产图片映射（使用下载的 Unsplash 图片）
+const specialtyImgMap = {
+  1: 'pepper.jpg',   // 贡布胡椒
+  3: 'rice.jpg',     // 暹粒香米
+  4: 'temple.jpg',   // 吴哥石雕
+  5: 'silk.jpg',     // 高棉丝绸
+  7: 'market.jpg',   // 银器铜器
+  8: 'silk.jpg',     // 蓝宝石
+  9: 'market.jpg',   // 腰果
+  11: 'market.jpg',  // 波罗福鱼酱
+  12: 'silk.jpg'     // 传统服饰
+}
+specialties.forEach(s => {
+  s.img = specialtyImgMap[s.id] || ''
+})
+
 export {
   taxLawCategories,
   taxLaws,
